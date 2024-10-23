@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section},~{::title})}">
+<head>
+<meta charset="UTF-8">
+<title>StrangePlay HomePage</title>
+</head>
+<body>
+	<section>
+		<th:block th:if="${session.succMsg}">
+			<p class="alert alert-success text-center">[[${session.succMsg}]]</p>
+			<th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
+		</th:block>
+
+		<th:block th:if="${session.errorMsg}">
+			<p class="alert alert-danger text-center">[[${session.errorMsg}]]</p>
+			<th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
+		</th:block>
+		<h1 style="background-color: black;">Home page</h1>
+	</section>
+</body>
+</html>

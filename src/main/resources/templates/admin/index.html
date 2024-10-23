@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section},~{::title})}">
+<head>
+<meta charset="UTF-8">
+<title>Admin's Dashboard Page</title>
+</head>
+<body>
+<section>
+		<div class="container p-5">
+			<p class="text-center fs-2 mt-5">Admin Dashboard</p>
+			<div class="row p-5">
+				<div class="col-md-4 mt-4">
+					<a href="/admin/users?type=1" class="text-decoration-none">
+						<div class="card card-sh">
+							<div class="card-body text-center text-primary">
+								<i class="fa-solid fa-circle-user fa-2x"></i>
+								<h4>View All Users</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+
+
+				<div class="col-md-4 mt-4">
+					<a href="/admin/add-admin" class="text-decoration-none">
+						<div class="card card-sh">
+							<div class="card-body text-center text-primary">
+								<i class="fa-solid fa-user-plus fa-2x"></i>
+								<h4>Add New Admin</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<div class="col-md-4 mt-4">
+					<a href="/admin/users?type=2" class="text-decoration-none">
+						<div class="card card-sh">
+							<div class="card-body text-center text-primary">
+								<i class="fa-solid fa-circle-user fa-2x"></i>
+								<h4>View all Admins</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+
+
+			</div>
+		</div>
+</section>
+
+</body>
+</html>
