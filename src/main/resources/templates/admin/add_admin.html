@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org"
-	th:replace="~{base::layout(~{::body},~{::title})}">
+	th:replace="~{base::layout(~{::body},~{::title},'/css/auth.css')}">
 <head>
 <meta charset="UTF-8">
 <title>Add New Admin Page</title>
@@ -97,8 +97,7 @@
 									<label class="form-label">Profile Image</label> <input
 										class="form-control" name="img" type="file">
 								</div>
-								<button type="submit"
-									class="btn btn-outline-dark col-md-12">Register</button>
+								<button type="submit" class="btn btn-outline-dark col-md-12">Register</button>
 							</form>
 						</div>
 
