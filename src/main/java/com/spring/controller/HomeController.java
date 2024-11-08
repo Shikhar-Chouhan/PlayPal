@@ -186,5 +186,16 @@ public class HomeController {
 			return "redirect:/signin?success=Your+password+has+been+changed+successfully.";
 		}
 	}
+	
+	//new code
+	@GetMapping("/learn")
+	public String learn() {
+		return "learn";
+	}
+	
+	@GetMapping("/contactus")
+	public String contactus() {
+		return "contactus";
+	}
 
 }

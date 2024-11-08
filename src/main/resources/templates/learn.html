@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org"
+	th:replace="~{base::layout(~{::body},~{::title},'/css/learn.css')}">
+<head>
+<meta charset="UTF-8">
+<title>Learn Sports</title>
+</head>
+<body>
+
+	<section class="hero">
+		<h1>Learn Your Favorite Sports</h1>
+		<p>Discover sports events and rules to improve your game knowledge.</p>
+	</section>
+
+	<section class="sports-container">
+		<h2>Sports Events</h2>
+		<div id="sports-lis">
+			<!-- Sports Events will be dynamically loaded here -->
+		</div>
+	</section>
+</body>
+</html>

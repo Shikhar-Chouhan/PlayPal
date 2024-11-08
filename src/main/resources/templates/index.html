@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org"
-	th:replace="~{base::layout(~{::section},~{::title})}">
+	th:replace="~{base::layout(~{::body},~{::title},'/css/style.css')}">
 <head>
 <meta charset="UTF-8">
-<title>StrangePlay HomePage</title>
+<title>PlayPal HomePage</title>
 </head>
 <body>
-	<section>
+	
 		<th:block th:if="${session.succMsg}">
 			<p class="alert alert-success text-center">[[${session.succMsg}]]</p>
 			<th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
@@ -16,7 +16,173 @@
 			<p class="alert alert-danger text-center">[[${session.errorMsg}]]</p>
 			<th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
 		</th:block>
-		<h1 style="background-color: black;">Home page</h1>
-	</section>
+		
+		<!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 style="color: rgb(60, 57, 57);">Discover, Connect & Play with PlayPal</h2>
+            <p>Explore sports venues, meet fellow players, and level up your game.</p>
+            <input type="search" placeholder="Search for sports venues, players, or events" class="search-box">
+            <a href="#" class="btn-cta">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>What We Offer</h2>
+        <div class="feature-container"> <!-- New container for features -->
+            <div class="feature-cards">
+                <div class="card">
+                    <h3>Find Venues</h3>
+                    <p>Search for venues nearby and book your slot easily.</p>
+                    <a href="#" class="btn">Find Now</a>
+                </div>
+                <div class="card">
+                    <h3>Meet Players</h3>
+                    <p>Connect with players around you and create teams.</p>
+                    <a href="#" class="btn">Join Now</a>
+                </div>
+                <div class="card">
+                    <h3>Host Events</h3>
+                    <p>Create and manage sports events and invite friends.</p>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <!-- Spotlight Section -->
+<section class="spotlight">
+    <div class="spotlight-heading">
+        <h2>In the Spotlight</h2>
+    
+    </div>
+    
+    
+    <div class="spotlight-container">
+        <div class="spotlight-cards">
+            <!-- Card 1: Sports Venues -->
+            <div class="spotlight-card">
+                <img src="sports-venues.jpg" alt="Find Sports Venues" class="card-image">
+                <h3>Find Sports Venues</h3>
+                <p>Explore a variety of venues for your favorite sports. Easily search, book, and manage your play schedules.</p>
+                <div class="button-container">
+                    <a href="#" class="btn">Explore Venues</a>
+                </div>
+                
+            </div>
+            <!-- Card 2: Meet Players -->
+            <div class="spotlight-card">
+                <img src="meet-players.jpg" alt="Meet Playmates" class="card-image">
+                <h3>Meet Playmates</h3>
+                <p>Connect with players around you. Join groups and find playmates for sports like badminton, tennis, cricket, and more.</p>
+                <div class="button-container">
+                    <a href="#" class="btn">Find Playmates</a>
+                </div>
+                </div>
+            <!-- Card 3: Join Events -->
+            <div class="spotlight-card">
+                <img src="join-events.jpg" alt="Join or Create Events" class="card-image">
+                <h3>Join or Create Events</h3>
+                <p>Participate in exciting tournaments or create your own. Host games, challenge friends, and keep the spirit alive.</p>
+                <div class="button-container"> <a href="#" class="btn">Browse Events</a> </div>
+                
+            </div>
+            <!-- Card 4: Skill Sessions -->
+            <div class="spotlight-card">
+                <img src="skill-sessions.jpg" alt="Improve Your Skills" class="card-image">
+                <h3>Improve Your Skills</h3>
+                <p>Join training sessions for various sports and level up your game. Certified coaches and tailored programs are available.</p>
+                <div class="button-container">
+                <a href="#" class="btn">Join Training</a>  </div>
+            </div>
+            <!-- Card 5: Manage Teams -->
+            <div class="spotlight-card">
+                <img src="manage-teams.jpg" alt="Manage Teams" class="card-image">
+                <h3>Manage Teams</h3>
+                <p>Effortlessly manage your team’s schedules, events, and communication. Keep track of performance and growth.</p>
+                <div class="button-container">
+                <a href="#" class="btn">Manage Teams</a> </div>
+            </div>
+            <!-- Card 6: Health & Fitness -->
+            <div class="spotlight-card">
+                <img src="health-fitness.jpg" alt="Health & Fitness Tips" class="card-image">
+                <h3>Health & Fitness Tips</h3>
+                <p>Receive personalized tips on improving your fitness and health, from warm-up techniques to nutrition guidance.</p>
+                <div class="button-container">
+                <a href="#" class="btn">Get Fit</a> </div>
+            </div>
+            <!-- Card 7: Local Leagues -->
+            <div class="spotlight-card">
+                <img src="local-leagues.jpg" alt="Join Local Leagues" class="card-image">
+                <h3>Join Local Leagues</h3>
+                <p>Stay competitive by joining local leagues and tournaments. Build lasting relationships and compete at higher levels.</p>
+                <div class="button-container">
+                <a href="#" class="btn">Join Leagues</a> </div>
+            </div>
+            <!-- Card 8: Shop Gear -->
+            <div class="spotlight-card">
+                <img src="shop-gear.jpg" alt="Shop Sports Gear" class="card-image">
+                <h3>Shop Sports Gear</h3>
+                <p>Find top-quality gear for your sport. Exclusive discounts and gear recommendations for players at all levels.</p>
+                <div class="button-container">
+                <a href="#" class="btn">Shop Now</a> </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--Personalized sports recommendation-->
+    <section id="personalized-sports">
+        <h2> Sports Recommendations</h2>
+        <div class="personalized-container">
+           
+            <h2>Find Your Perfect Sport</h2>
+            <p>Tell us about your preferences, and we'll recommend the best sports for you!</p>
+
+            <form id="sport-form" onsubmit="return getRecommendations();">
+                <div class="input-group">
+                    <label for="age">What's your age group?</label>
+                    <select id="age" name="age" required>
+                        <option value="" disabled selected>Select Age Group</option>
+                        <option value="kids">Kids (5-12)</option>
+                        <option value="teens">Teens (13-18)</option>
+                        <option value="adults">Adults (19+)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="activity-level">What's your activity level?</label>
+                    <select id="activity-level" name="activity-level" required>
+                        <option value="" disabled selected>Select Activity Level</option>
+                        <option value="low">Low</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="indoor-outdoor">Do you prefer indoor or outdoor activities?</label>
+                    <select id="indoor-outdoor" name="indoor-outdoor" required>
+                        <option value="" disabled selected>Select Preference</option>
+                        <option value="indoor">Indoor</option>
+                        <option value="outdoor">Outdoor</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <button type="submit" class="btn">Get Recommendations</button>
+                </div>
+            </form>
+
+            <div id="recommendations" class="recommendations">
+                <!-- Recommendations will appear here -->
+            </div>
+        </div>
+    </section>
+	
 </body>
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" th:fragment="navbar">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/navbar.css" />
+</head>
+<body>
+<!--  Start Navbar-->
+	<!-- style="background-color: #7091E6 #3D52A0  #8697C4 #ADBBDA #EDE8F5;"-->
+	<header class="headerpart1">
+		<nav class="navbar1">
+
+			<div class="logo1">
+				<img src="path/to/logo.png" alt="PlayPal Logo" class="logo-image1">
+				<h1 class="hpart1">PlayPal</h1>
+			</div>
+
+			<th:block th:if="${user==null}">
+				<ul class="nav-links1">
+					<li class="lpart1"><a class="apart1" href="/"> Home</a></li>
+					<li class="lpart1"><a class="apart1" href="/learn">Learn</a></li>
+					<li class="lpart1"><a class="apart1" href="/contactus">Contact Us</a></li>
+				</ul>
+			</th:block>
+
+			<th:block th:unless="${user==null}">
+				<ul class="nav-links1">
+					<li class="lpart1"><a  class="apart1" href="/"> Home</a></li>
+					<li  class="lpart1" th:if="${user.role=='ROLE_ADMIN'}"><a  class="apart1" href="/admin/">
+							Dashboard</a></li>
+					<li class="lpart1"><a class="apart1" href="/learn">Learn</a></li>
+					<li class="lpart1"><a class="apart1" href="/contactus">Contact Us</a></li>
+				</ul>
+			</th:block>
+
+			<!--login signup-->
+			<th:block th:if="${user==null}">
+				<div class="login-signup1">
+					<a class="btn1" href="/signin"> Login</a> <a class="btn1"
+						href="/register"> Register</a>
+				</div>
+			</th:block>
+
+			<th:block th:if="${user!=null}">
+				<div class="login-signup11">
+						<a class="btn1" th:if="${user.role=='ROLE_USER'}"
+							href="/user/profile">Profile</a>
+						<a class="btn1" th:if="${user.role=='ROLE_ADMIN'}"
+							href="/admin/profile">Profile</a>
+						<a class="btn1" href="/logout">Logout</a>
+						<span>Welcome, [[${user.name}]]</span>
+				</div>
+			</th:block>
+
+		</nav>
+	</header>
+	<!--  End Navbar-->
+</body>
+</html>

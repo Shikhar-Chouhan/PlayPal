@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color:#EDE8F5 ;
+    margin: 0;
+    padding: 0;
+}
+
+/* Logo Styles */
+.logo {
+    display: block; 
+    margin: 20px auto; 
+    max-width: 100%; 
+    height: auto;
+}
+
+/* Auth Container */
+.auth-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    padding-top: 50px; 
+}
+
+/* Auth Box */
+.auth-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+}
+
+/* Heading Styles */
+.auth-box h2 {
+    font-size: 28px; 
+    margin-bottom: 20px; 
+    color:#004aad ; 
+}
+
+/* Input Group Styles */
+.input-group {
+    margin-bottom: 20px; 
+    text-align: left; 
+}
+
+.input-group label {
+    display: block; 
+    margin-bottom: 5px; 
+    color: #333; 
+}
+
+.input-group input {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    font-size: 16px; 
+    transition: border 0.3s; 
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none; 
+}
+
+/* Show Password Checkbox */
+input[type="checkbox"] {
+    margin-top: 10px; 
+}
+
+/* Button Styles */
+.btn {
+    background-color:#7091E6 ; 
+    color: white; 
+    padding: 12px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+.btn:hover {
+    background-color:  #361793 ; 
+}
+
+/* Links */
+a {
+    color: #007bff; 
+    text-decoration: none; 
+}
+
+a:hover {
+    text-decoration: underline; 
+}
+
+/* Small Help Text */
+small {
+    display: block; 
+    color: #666; 
+    margin-top: 5px; 
+}
+
+/* Login/Signup Link Styles */
+.login-link, .signup-link {
+    margin-top: 20px; 
+    font-size: 14px;
+    color: #666; 
+}
+
+  
