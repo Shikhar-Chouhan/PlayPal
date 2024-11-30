@@ -15,25 +15,28 @@ body {
     height: auto;
 }
 
-/* Auth Container */
+
+/* Adjusted Auth Container */
 .auth-container {
     display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    padding-top: 50px; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px); /* Adjust for navbar and footer height */
+    padding: 20px 0; /* Reduce top and bottom padding */
 }
 
-/* Auth Box */
+/* Adjusted Auth Box */
 .auth-box {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    width: 400px;
+    padding: 30px; /* Reduce padding */
+    width: 350px; /* Slightly smaller width */
     text-align: center;
+    margin: 20px auto; /* Add some margin for spacing */
 }
+
 
 /* Heading Styles */
 .auth-box h2 {

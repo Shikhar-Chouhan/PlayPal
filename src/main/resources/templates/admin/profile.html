@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org"
-	th:replace="~{base::layout(~{::body},~{::title},'/css/style.css')}">
+	th:replace="~{base::layout(~{::body},~{::title},'/css/profile.css')}">
 <head>
 <meta charset="UTF-8">
 <title>Admin Profile Page</title>
@@ -152,28 +152,7 @@
 
 
 				<!-- Delete Account Button -->
-				<div class="col-md-10 offset-md-1 mt-3 text-center">
-					<button type="button" class="btn btn-danger" data-bs-toggle="modal"
-						data-bs-target="#deleteAccountModal">Delete Account</button>
-				</div>
-
-				<!-- Delete Account Confirmation Modal -->
-				<div class="modal fade" id="deleteAccountModal" tabindex="-1"
-					aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="deleteAccountModalLabel">Confirm
-									Deletion</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal"
-									aria-label="Close"></button>
-							</div>
-							<div class="modal-body">Are you sure you want to delete
-								your account? If you delete your account you have to register
-								again.</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary"
-									data-bs-dismiss="modal">Cancel</button>
+				
 								<form action="/admin/delete-account" method="post">
 									<input type="hidden" name="id" th:value="${user.id}" />
 									<button type="submit" class="btn btn-danger">Delete
@@ -181,15 +160,7 @@
 								</form>
 							</div>
 						</div>
-					</div>
-				</div>
-
-
-			</div>
-
-		</div>
-
-
+				
 
 
 

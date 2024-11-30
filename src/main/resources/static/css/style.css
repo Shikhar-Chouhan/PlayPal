@@ -225,87 +225,107 @@ p a:hover {
 }
 
 
-    
 /* Spotlight Section Styling */
 .spotlight {
-    overflow: hidden; 
-    position: relative; 
-    padding: 50px 0; 
+    overflow: hidden;
+    position: relative;
+    padding: 50px 0;
 }
 
 /* Spotlight Section Heading Styling */
 .spotlight-heading {
-    text-align: center;          
+    text-align: center;
     margin-bottom: 30px;
 }
 
 .spotlight-heading h2 {
-    font-size: 36px;          
+    font-size: 36px;
     color: #0056b3;
     font-family: 'Arial', sans-serif;
-    position: relative;        
+    position: relative;
 }
-
 
 /* Spotlight Cards Container */
 .spotlight-cards {
-    display: flex;                
-    animation: slide-in 10s linear infinite;
+    display: flex;
+    animation: slide-in 10s linear infinite; /* Sliding animation */
+    animation-play-state: running; /* Default state is running */
 }
 
 /* Add gap between cards */
 .spotlight-card {
     background-color: #ffffff;
     border-radius: 15px;
-    width: 400px;                  
-    height: 400px;                
+    width: 400px;
+    height: 400px;
     padding: 0;
-    margin: 0 15px;                
+    margin: 0 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
-    flex: 0 0 auto;   
-}             
+    flex: 0 0 auto;
+    z-index: 2; /* Ensure cards are above other elements */
+}
 
 /* Spotlight Card Image Styling */
 .card-image {
-    width: 100%;                   
+    width: 100%;
     height: 200px;
-    object-fit: cover;             
-    border-top-left-radius: 15px; 
-    border-top-right-radius: 15px; 
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 /* Animation to slide cards from right to left */
 @keyframes slide-in {
     0% {
-        transform: translateX(100%); 
+        transform: translateX(100%);
     }
     100% {
-        transform: translateX(-100%); 
+        transform: translateX(-100%);
     }
 }
 
-/* Stops animation on hover */
-.spotlight-card:hover {
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-    transform: scale(1.05); 
-    animation-play-state: paused; 
+/* Stops animation on hover or active state */
+.spotlight-cards:hover,
+.spotlight-cards:active {
+    animation-play-state: paused; /* Stops the sliding animation */
 }
 
+.spotlight-card:hover,
+.spotlight-card:active {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3); /* Highlight card */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Spotlight Card Heading and Paragraph */
 .spotlight-card h3 {
     font-size: 26px;
-    margin: 15px;           
+    margin: 15px;
     color: #0056b3;
 }
 
 .spotlight-card p {
     font-size: 16px;
     color: #666666;
-    margin: 15px;              
+    margin: 15px;
     flex-grow: 1;
 }
+
+/* Example Keyframes Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 /* Button Container Styling */
 .button-container {
